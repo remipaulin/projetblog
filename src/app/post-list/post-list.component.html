@@ -2,7 +2,7 @@
 <div class="container">
   <div class="row">
     <div class="col-xs-12">
-      <h1>Posts (on post-list html)</h2>
+      <h1>Posts</h1>
       <ul class="list-group">
         <app-post-list-item *ngFor="let post of posts" 
           [postListItemTitle]="post.title"
@@ -10,17 +10,14 @@
           [postListItemLoveIts]="post.loveIts"
           [postListItemCreatedAt]='post.created_at'
           >
-          <p>{{post.contenu}}</p>
+          
       
         </app-post-list-item>
       </ul>
       
 
-      <app-post-list-item [postListItemTitle]="'Yeah Man'"></app-post-list-item>
-<!--       <button class="btn btn-success" 
-              (click)="onLike()">Love It</button>
-      <button class="btn btn-error" 
-              (click)="onNotLike()">Don't love it</button> -->
+      <app-post-list-item [postListItemTitle]="'Yeah Man'" [postListItemLoveIts]="0"></app-post-list-item>
+
     </div>
   </div>
 </div>

@@ -15,7 +15,7 @@ export class AppComponent {
     {
       title: 'Mon premier post',
       content: this.lorem_ipsum,
-      loveIts: 0,
+      loveIts: 1,
       created_at: this.creation_date
     },
     {
@@ -27,7 +27,7 @@ export class AppComponent {
     {
       title: 'Encore un post',
       content: this.lorem_ipsum,
-      loveIts: 0,
+      loveIts: -1,
       created_at: this.creation_date
     },
 
