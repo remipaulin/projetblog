@@ -1,3 +1,8 @@
-<p>
-  post-list-item works!
-</p>
+<li [ngClass]="{'list-group-item': true,
+                'list-group-item-success': postListItemLoveIts > 0,
+                'list-group-item-danger': postListItemLoveIts < 0}">
+    
+  <h4> h4 in post-list-item {{ postListItemTitle }} {{ postListItemCreatedAt }}</h4>
+  
+</li>
+<br>

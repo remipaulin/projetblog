@@ -1,3 +1,26 @@
-<p>
-  post-list works!
-</p>
+
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12">
+      <h1>Posts (on post-list html)</h2>
+      <ul class="list-group">
+        <app-post-list-item *ngFor="let post of posts" 
+          [postListItemTitle]="post.title"
+          [postListItemContent]="post.content"
+          [postListItemLoveIts]="post.loveIts"
+          [postListItemCreatedAt]='post.created_at'
+          >
+          <p>{{post.contenu}}</p>
+      
+        </app-post-list-item>
+      </ul>
+      
+
+      <app-post-list-item [postListItemTitle]="'Yeah Man'"></app-post-list-item>
+<!--       <button class="btn btn-success" 
+              (click)="onLike()">Love It</button>
+      <button class="btn btn-error" 
+              (click)="onNotLike()">Don't love it</button> -->
+    </div>
+  </div>
+</div>
