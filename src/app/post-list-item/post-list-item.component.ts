@@ -24,7 +24,7 @@ export class PostListItemComponent implements OnInit {
   }
 
   onNotLike(){
-    this.postListItem.loveIts --;
+    this.postsService.removeLoveIts(this.index);
     console.log("J'aime pas");
   }
 
