@@ -5,10 +5,7 @@
       <h1>Posts</h1>
       <ul class="list-group">
         <app-post-list-item *ngFor="let post of posts" 
-          [postListItemTitle]="post.title"
-          [postListItemContent]="post.content"
-          [postListItemLoveIts]="post.loveIts"
-          [postListItemCreatedAt]='post.created_at'
+          [postListItem]='post'
           >
           
       
