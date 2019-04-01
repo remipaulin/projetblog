@@ -49,11 +49,28 @@ export class PostsService {
 
   }
 
-  addPost() {
+  addPost(newPost: Post) {
+    this.posts.push(newPost);
+    this.emitPosts;
 
   }
 
-  removePost() {
+  removePost(index: number) {
+    console.log("Suppression du post "+ index);
+    this.posts.splice(index,1);
+    this.emitPosts;
+
+  }
+
+  addLoveIts(index: number) {
+    this.posts[index]['loveIts'] ++;
+    this.emitPosts;
+
+  }
+
+  removeLoveIts(index: number) {
+    this.posts[index]['loveIts'] --;
+    this.emitPosts;
 
   }
 

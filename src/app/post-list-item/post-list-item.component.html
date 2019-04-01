@@ -3,14 +3,18 @@
                 'list-group-item-danger': postListItem.loveIts < 0}">
 
   <div>
-    <span style="font-size: 24px"><strong>{{ postListItem.title }}</strong></span> 
+    <span style="font-size: 24px"><strong>{{ postListItem.title }} - Index: {{index}}</strong></span> 
     
     <span style="float: right"> {{ postListItem.created_at | date: 'short' }}</span>
   </div>
   
   <p>{{postListItem.content}}</p>
   <button class="btn btn-success" (click)="onLike()" style="margin-right: 5px">Love It</button>
-  <button class="btn btn-error" (click)="onNotLike()">Don't love it</button>
+  <button class="btn btn-danger" (click)="onNotLike()">Don't love it</button>
+  <span style="float: right">
+    <button class="btn btn-danger"  (click)="onDeletePost()">Supprimer Post</button>
+  </span>
+
 
 
 </li>

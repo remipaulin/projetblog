@@ -10,6 +10,8 @@ import { HeaderComponent } from './header/header.component';
 import { Routes, RouterModule } from '@angular/router';
 import { NewPostComponent } from './new-post/new-post.component';
 
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
 const appRoutes: Routes = [
   { path: 'posts', component: PostListComponent},
   { path: 'new', component: NewPostComponent},
@@ -27,6 +29,8 @@ const appRoutes: Routes = [
     NewPostComponent
   ],
   imports: [
+    FormsModule,
+    ReactiveFormsModule,
     BrowserModule,
     RouterModule.forRoot(appRoutes)
   ],
