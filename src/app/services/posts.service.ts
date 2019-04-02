@@ -9,8 +9,6 @@ import { resolve, reject } from 'q';
 })
 export class PostsService {
 
-  postsSubject = new Subject<Post[]>();
-
   creation_date = new Date();
   lorem_ipsum = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum";
   posts: Post[] = [
@@ -34,11 +32,13 @@ export class PostsService {
     },
 
   ];
+  postsSubject = new Subject<Post[]>();
   
   constructor() { }
 
   emitPosts() {
     this.postsSubject.next(this.posts);
+    console.log(this.postsSubject.observers);
   }
 
   savePosts() {
@@ -51,26 +51,26 @@ export class PostsService {
 
   addPost(newPost: Post) {
     this.posts.push(newPost);
-    this.emitPosts;
+    this.emitPosts();
 
   }
 
   removePost(index: number) {
     console.log("Suppression du post "+ index);
     this.posts.splice(index,1);
-    this.emitPosts;
+    this.emitPosts();
 
   }
 
   addLoveIts(index: number) {
     this.posts[index]['loveIts'] ++;
-    this.emitPosts;
+    this.emitPosts();
 
   }
 
   removeLoveIts(index: number) {
     this.posts[index]['loveIts'] --;
-    this.emitPosts;
+    this.emitPosts();
 
   }
 
